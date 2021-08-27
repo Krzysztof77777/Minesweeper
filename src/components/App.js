@@ -6,6 +6,7 @@ import StoreProvider from "../store/StoreProvider";
 
 import HeaderMineSweeperComponent from "./HeaderMineSweeperComponent";
 import BoardMineSweeperComponent from "./BoardMineSweeperComponent";
+import PanelMineSweeperComponent from "./PanelMineSweeperComponent";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <main className="game">
         <HeaderMineSweeperComponent></HeaderMineSweeperComponent>
         <BoardMineSweeperComponent></BoardMineSweeperComponent>
+        <PanelMineSweeperComponent></PanelMineSweeperComponent>
       </main>
     </StoreProvider>
   );
