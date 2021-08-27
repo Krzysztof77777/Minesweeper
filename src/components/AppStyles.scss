@@ -1,0 +1,155 @@
+@font-face {
+    font-family: DIGITALDREAM;
+    src: url('../../public/assets/DIGITALDREAM.ttf');
+}    
+:root {
+    --primary-color:  #c0c0c0;
+    --primary-color--dark:  #808080;
+    --alarm-color:  #f80000;
+    --info-one-color:  #0200fc;
+    --info-two-color:  #017e00;
+    --info-three-color:  #ff0000;
+    --info-four-color:  #010080;
+    --info-five-color:  #7f0300;
+    --info-six-color:  #008080;
+    --info-seven-color:  #000000;
+    --info-eight-color:  #808080;
+    --cell-size:  4rem;
+    --game-padding:  1.5rem;
+    --border-width:  0.3rem;
+    --cells-in-row:  8;
+    --game-max-width:  calc( var(--cell-size) * var(--cells-in-row) + calc(2 * var(--game-padding)) + calc(2 * var(--border-width)) );
+}
+html {
+    font-size:10px;
+}
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(90deg, #000 ,#fff);
+    font-family: Lato, sans-serif;
+    overflow-x: hidden;
+}
+#root {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:100vw;
+    min-height: 100vh;
+}
+.game {
+    background-color: var(--primary-color);
+    padding: var(--game-padding);
+    max-width: var(--game-max-width);
+    width:100%;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: calc(var(--game-padding)/2);
+    margin-bottom:0.5rem;
+    &__counter {
+    background-color: rgb(0, 0, 0);
+    color: var(--alarm-color);
+    font-family: DIGITALDREAM, sans-serif;
+    font-size: 3.2rem;
+    min-width: 9rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0.5rem;
+    }
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary-color);
+        outline: none;
+        cursor: pointer;
+        & img {
+            width: 4.8rem;
+            height: 4.8rem;
+        }
+    }
+}
+.board {
+    display:flex;
+    flex-wrap: wrap;
+    margin-bottom:0.5rem;
+}
+.panel {
+    padding: calc(var(--game-padding)/2);
+    &__header {
+        text-align: center;
+        font-size: 2rem;
+    }
+    &__buttons {
+        display:flex;
+        padding-top: 0.5rem;
+    }
+    & .button {
+        padding:1.5rem 0;
+        cursor:pointer;
+        font-size: 2rem;
+        flex-grow: 1;
+    }
+}
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    cursor: pointer;
+    background-size: 2rem;
+    font-size: 2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.border {
+    border: var(--border-width) solid;
+}
+.border--convex {
+    border-color: var(--primary-color--dark) #fff #fff var(--primary-color--dark);
+}
+.border--concave {
+    border-color: #fff var(--primary-color--dark) var(--primary-color--dark) #fff;
+}
+.border--revealed {
+    border-width: 0.1rem;
+    border-color: var(--primary-color--dark);
+}
+.cell--is-flag {
+    background-image: url('../../public/assets/flag.svg');
+}
+.cell--is-mine {
+    background-image: url('../../public/assets/bomb.svg');
+    background-color: var(--alarm-color);
+}
+.cell-info-1 {
+    color: var(--info-one-color);
+}
+.cell-info-2 {
+    color: var(--info-two-color);
+}
+.cell-info-3 {
+    color: var(--info-three-color);
+}
+.cell-info-4 {
+    color: var(--info-four-color);
+}
+.cell-info-5 {
+    color: var(--info-five-color);
+}
+.cell-info-6 {
+    color: var(--info-six-color);
+}
+.cell-info-7 {
+    color: var(--info-seven-color);
+}
+.cell-info-8 {
+    color: var(--info-eight-color);
+}
